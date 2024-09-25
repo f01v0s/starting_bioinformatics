@@ -124,10 +124,14 @@ animals = [camel, lion, deer, goose, bat, rabbit]
 
 # write your code here
 while True:
-    habitat = int(input())
-    if habitat != "exit":
-        print(animals[int(number)])
+    user_input = input("Please enter the number of the habitat you would like to view (or 'exit' to quit): ")
+
+    if user_input == "exit":
+        print("See you later!")
+        break  # Exit the loop when 'exit' is entered
+
+    habitat_number = int(user_input)
+    if 0 <= habitat_number < len(animals):
+        print(animals[habitat_number])
     else:
-      habitat == 'exit'
-      print('See you!')
-      exit()
+        print("Invalid habitat number. Please try again.")
